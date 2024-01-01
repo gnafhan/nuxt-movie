@@ -9,10 +9,10 @@
           <p class="font-medium text-2xl">Movie</p>
         </div>
         <div class=" flex-initial flex-row hidden gap-x-9 md:flex">
-          <p class="text-red-500 font-medium cursor-default" href="/">Home</p>
-          <a class="hover:text-gray-300 active:text-white" href="/">Trending</a>
-          <a class="hover:text-gray-300 active:text-white" href="/">Movies</a>
-          <a class="hover:text-gray-300 active:text-white" href="/">Tv Show</a>
+          <a :class="{'text-red-500 font-medium cursor-default' : $route.path == '/', 'hover:text-gray-300 active:text-white': $route.path != '/'}" ><NuxtLink to="/">Home</NuxtLink></a>
+          <a :class="{'text-red-500 font-medium cursor-default' : $route.path == '/trending', 'hover:text-gray-300 active:text-white': $route.path != '/trending'}"><NuxtLink to="/trending">Trending</NuxtLink></a>
+          <a :class="{'text-red-500 font-medium cursor-default' : $route.path == '/movies', 'hover:text-gray-300 active:text-white': $route.path != '/movies'}" ><NuxtLink to="/movies">Movies</NuxtLink></a>
+          <a :class="{'text-red-500 font-medium cursor-default' : $route.path == '/tv-show', 'hover:text-gray-300 active:text-white': $route.path != '/tv-show'}"><NuxtLink to="/tv-show">Tv Shows</NuxtLink></a>
         </div>
       </div>
 </template>
